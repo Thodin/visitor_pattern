@@ -1,7 +1,7 @@
 use super::visitor::Visitor;
 
 pub trait Shape {
-    fn accept(&self, visitor: &dyn Visitor) -> f64;
+    fn accept(&self, visitor: &dyn Visitor);
 }
 
 pub struct Circle {
@@ -9,7 +9,7 @@ pub struct Circle {
 }
 
 impl Shape for Circle {
-    fn accept(&self, visitor: &dyn Visitor) -> f64 {
+    fn accept(&self, visitor: &dyn Visitor) {
         visitor.visit_circle(self)
     }
 }
@@ -20,7 +20,7 @@ pub struct Rectangle {
 }
 
 impl Shape for Rectangle {
-    fn accept(&self, visitor: &dyn Visitor) -> f64 {
+    fn accept(&self, visitor: &dyn Visitor) {
         visitor.visit_rectangle(self)
     }
 }
@@ -30,7 +30,7 @@ pub struct Square {
 }
 
 impl Shape for Square {
-    fn accept(&self, visitor: &dyn Visitor) -> f64 {
+    fn accept(&self, visitor: &dyn Visitor) {
         visitor.visit_square(self)
     }
 }
